@@ -6,9 +6,12 @@
 
 ## react-native-camera-roll(651 star)
 
-## react-native-image-picker
+## react-native-image-picker(7.8k)
++ https://github.com/react-native-image-picker/react-native-image-picker
 
-## react-native-image-crop-picker
+
+## react-native-image-crop-picker(5.6k)
++ https://github.com/ivpusic/react-native-image-crop-picker#readme
 
 ## react-native-camera-kit
 
