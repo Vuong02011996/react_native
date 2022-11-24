@@ -3,10 +3,9 @@ import { StyleSheet, Text, View, ScrollView,
 	FlatList, 
 	TouchableOpacity 
 } from 'react-native';
-import CategoryList from './components/CategoryList';
-import AppNavigation from './AppNavigation'
+import CategoryList from "../components/CategoryList"
 
-function App1() {
+export default function Categories({ navigation }) {
 
   const state = {
     categories: [
@@ -32,7 +31,7 @@ function App1() {
 		  	data={categories}
 			renderItem ={({item}) => {
 				console.log("item: ", item)
-				return <CategoryList category={item}/>
+				return <CategoryList category={item} onPress={() => navigation.navigate('Category')}/>
 			}}
 			keyExtractor={(item) => `${item.id}`}
 			contentContainerStyle={{paddingLeft: 32, paddingRight: 32}}
@@ -40,14 +39,6 @@ function App1() {
       {/* </ScrollView> */}
       <StatusBar style="auto" />
     </View>
-  );
-}
-
-
-function App() {
-
-  return (
-    <AppNavigation></AppNavigation>
   );
 }
 
@@ -59,5 +50,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-export default App

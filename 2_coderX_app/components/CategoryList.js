@@ -3,7 +3,9 @@ import {
     Image,
     Text,
     View,
-    StyleSheet
+    StyleSheet,
+    TouchableOpacity,
+    Alert
 } from 'react-native'
 
 import image1 from '../images/floral.png'
@@ -19,12 +21,17 @@ import image1 from '../images/floral.png'
 
 export default function CategoryList(props)
 {
+    const {category, onPress} = props
+    console.log("props: ", props)
+
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>CategoryItem</Text>
-            {/* <Image style={{height: 64, width:64}} source={image1}></Image> */}
-            <Image style={styles.categoryImage} source={image1}></Image>
-        </View>
+        <TouchableOpacity activeOpacity={0.3} onPress={onPress}>
+            <View style={styles.container}>
+                <Text style={styles.title}>{category.name}</Text>
+                {/* <Image style={{height: 64, width:64}} source={image1}></Image> */}
+                <Image style={styles.categoryImage} source={image1}></Image>
+            </View>
+        </TouchableOpacity>
     )
 }
 
@@ -36,9 +43,10 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         backgroundColor: "#fff",
         shadowColor: "#000",
-        shadowOpacity: 0.3,
+        shadowOpacity: 0.5,
         shadowRadius: 10,
-        shadowOffset: {width: 0, height: 0}
+        shadowOffset: {width: 0, height: 0},
+        marginBottom: 16,
     },
     categoryImage: {
         height: 64,
@@ -46,6 +54,7 @@ const styles = StyleSheet.create({
     },
     title: {
         textTransform: "uppercase",
-        marginBottom: 8
+        marginBottom: 8,
+        fontWeight: "600",
     }
 })
