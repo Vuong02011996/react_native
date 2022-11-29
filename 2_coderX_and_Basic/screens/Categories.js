@@ -28,10 +28,16 @@ export default function Categories({ navigation }) {
 
 		  {/* Cách 2: Dùng FlatList */}
 		  <FlatList 
-		  	data={categories}
+		  data={categories}
 			renderItem ={({item}) => {
 				console.log("item: ", item)
-				return <CategoryList category={item} onPress={() => navigation.navigate('Category')}/>
+				return <CategoryList category={item} onPress={() => {
+          navigation.navigate('CategoryItem',
+          {
+            itemId: item.id,
+            title: item.name,
+          })
+        }}/>
 			}}
 			keyExtractor={(item) => `${item.id}`}
 			contentContainerStyle={{paddingLeft: 32, paddingRight: 32}}

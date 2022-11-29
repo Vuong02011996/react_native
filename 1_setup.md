@@ -5,10 +5,6 @@
 3. JDK
     + Java is used to build native Android apps. 
     + This means that Java Development Kit (JDK) is required for working with projects in React Native. 
-    ```
-    sudo apt-get install openjdk-8-jdk
-    sudo apt-get update
-    ```
 4. Giả lập Android Studio 
     + Cách 1: download về giải nén: `https://developer.android.com/studio/index.html`
 
@@ -33,7 +29,7 @@
 ## Using React Native CLI.
 + https://reactnative.dev/docs/environment-setup
 ```
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$HOME/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 ```

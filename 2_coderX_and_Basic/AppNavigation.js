@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Categories from './screens/Categories';
-import Category from './screens/Category';
+import CategoryItem from './screens/CategoryItem';
 
 function HomeScreen() {
   return (
@@ -22,8 +22,9 @@ function AppNavigation() {
     <NavigationContainer>
       <Stack.Navigator>
         {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
-        <Stack.Screen name="Category" component={Category} />
-        <Stack.Screen name="Categories" component={Categories} />
+        {/* Mỗi screen được định nghĩa ở đây mặc định sẽ có một props là navigation  */}
+        <Stack.Screen name="Categories" component={Categories}  options={{ title: 'Categories' }} />
+        <Stack.Screen name="CategoryItem" component={CategoryItem} />
       </Stack.Navigator>
     </NavigationContainer>
   );

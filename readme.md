@@ -2,9 +2,6 @@
 + JavaScript both ios(swift, objective-c) + android(Java)
 + Ngoài React Native của JS còn có các Framework sau có thể build app trên nhiều nền tảng(cross-platform) như: Xamarin(C#), Flutter(Dart), ngôn ngữ Kotlin.
 
-
-
-
 + Có ba cách build app react-native
     + Expo CLI(tool setup - fast easy có packgage, api có sẵn chỉ cần import vào sử dụng)
     + React Native CLI(command line - dùng cho dự án lớn)

@@ -13,6 +13,7 @@
     "pod-install": "^0.1.38",
     "react": "18.1.0",
     "react-native": "0.70.6",
+    "react-native-fs": "^2.20.0",
     "react-native-reanimated": "^2.13.0",
     "react-native-vision-camera": "^2.15.2",
     "vision-camera-face-detector": "^0.1.8"
