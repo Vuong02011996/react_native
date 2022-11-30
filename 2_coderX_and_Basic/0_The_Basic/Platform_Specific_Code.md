@@ -39,3 +39,10 @@ const styles = StyleSheet.create({
   }
 });
 ```
+
+## Detecting the Android version
+
+```
+import { Platform } from 'react-native';
+
+```
