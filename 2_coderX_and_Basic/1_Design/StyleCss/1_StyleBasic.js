@@ -3,6 +3,9 @@ import React from 'react';
 
 // With React Native, you style you application using JavaScript.
 // All of the core component accept a prop name style.
+// prop style: có thể nhận một mảng các object chứa thuộc tính CSS,
+// object sau sẽ thuộc tính giống object trước sẽ đè CSS của object viết trước
+
 // The style names and values usually match how CSS works on the web, eccept name are written using camel case.
 
 // As a components grows in complexity. It is often cleaner to use StyleSheet.create

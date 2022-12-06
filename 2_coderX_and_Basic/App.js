@@ -11,21 +11,13 @@ import {
 // import AppNavigation from './AppNavigation'
 import AppLearnBasic from './0_The_Basic/AppLearnBasic';
 import AppLearnDesign from './1_Design/AppLearnDesign';
+import AppLearnCoreComponents from './2_Core_Components/AppLearnCoreComponents';
+import AppLearnNatigation from './3_Navigation/AppLearnNatigation';
 
 function App() {
     return (
-        <AppLearnDesign></AppLearnDesign>
+        <AppLearnNatigation></AppLearnNatigation>
         // <AppNavigation></AppNavigation>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
-
 export default App;

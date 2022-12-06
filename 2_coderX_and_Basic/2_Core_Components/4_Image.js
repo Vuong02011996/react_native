@@ -1,8 +1,15 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 
-// Static Image
+// resizeMode
+// Sẽ có hai kích thước: kích thước w,h gốc của ảnh, kích thước chế độ xem(w, h trong style)(kích thước ta set)
+// Dùng cover hoặc contain : cả hai đều phải giữ đúng tỉ lệ w/h của ảnh
+// cover: resize kích thước ảnh sao cho w, h phải bằng hoặc lớn hơn kích thước xem, nếu không đúng tỉ lệ , cắt ảnh.
+// contain: resize kích thước ảnh sao cho w, h phải nhỏ hơn hoặc bằng kích thước xem, nếu không đúng tỉ lệ có thể có khoảng trắng.
 
+// Dùng stretch: sẽ resize ảnh cho đúng kích thước xem, có thể change the aspect ratio of image. (thay đổi tỉ lệ khung hình ảnh)
+
+// Static Image
 const StaticImageStyle = () => {
     return <Image source={require('../../images/flower-pot.png')} />;
 };
