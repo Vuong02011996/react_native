@@ -8,16 +8,16 @@ import {
     TouchableOpacity,
 } from 'react-native';
 // import CategoryList from './components/CategoryList';
-// import AppNavigation from './AppNavigation'
-import AppLearnBasic from './0_The_Basic/AppLearnBasic';
-import AppLearnDesign from './1_Design/AppLearnDesign';
-import AppLearnCoreComponents from './2_Core_Components/AppLearnCoreComponents';
-import AppLearnNatigation from './3_Navigation/AppLearnNatigation';
+import AppNavigation from './AppNavigation';
+// import AppLearnBasic from './0_The_Basic/AppLearnBasic';
+// import AppLearnDesign from './1_Design/AppLearnDesign';
+// import AppLearnCoreComponents from './2_Core_Components/AppLearnCoreComponents';
+// import AppLearnNatigation from './3_Navigation/AppLearnNatigation';
 
 function App() {
     return (
-        <AppLearnNatigation></AppLearnNatigation>
-        // <AppNavigation></AppNavigation>
+        // <AppLearnNatigation></AppLearnNatigation>
+        <AppNavigation></AppNavigation>
     );
 }
 export default App;

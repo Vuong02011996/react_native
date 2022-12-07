@@ -17,6 +17,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Screen: The only required configuration for a screen is the name and component props
 // Other options available in here: https://reactnavigation.org/docs/native-stack-navigator/
+// Some props such as: options(that contains various configuration options: title, ),initialParams, ...
 // The component prop accepts component, not a render function. Don't pass component={() => <HomeScreen />}
 
 // Change  initial route for the stack by initialRouteName="Home". But press r to reload app.
@@ -34,17 +35,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // Using a render callback removes those optimizations
 // you'll need to ensure that you use React.memo or React.PureComponent for your screen components to avoid performance issues.
 
-import { HomeScreen } from './1_Moving_between_screens';
-
-function DetailsScreen() {
-    return (
-        <View
-            style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-        >
-            <Text>Details Screen</Text>
-        </View>
-    );
-}
+// import { HomeScreen, DetailsScreen } from './1_Moving_between_screens';
+// import { HomeScreen, DetailsScreen } from './2_Passing_parameters_to_routers';
+// import StackScreen from './3_Configuring_the_header_bar';
+// import StackScreen from './4_Header_Button';
+import TabNavigationTest from './6_Tab_Navigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -53,14 +48,20 @@ const AppLearnNatigation = () => {
         <SafeAreaProvider>
             <NavigationContainer>
                 {/* Rest of your app code */}
-                <Stack.Navigator initialRouteName="HomeScreen">
+                {/* <Stack.Navigator initialRouteName="HomeScreen">
                     <Stack.Screen
                         name="HomeScreen"
                         component={HomeScreen}
                         options={{ title: 'Overview' }}
                     />
-                    <Stack.Screen name="Details" component={DetailsScreen} />
-                </Stack.Navigator>
+                    <Stack.Screen
+                        name="Details"
+                        component={DetailsScreen}
+                        initialParams={{ initialParams: 'initialParams' }}
+                    />
+                </Stack.Navigator> */}
+
+                <TabNavigationTest />
             </NavigationContainer>
         </SafeAreaProvider>
     );
