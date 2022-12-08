@@ -11,7 +11,7 @@ console.log('Version: ', Platform.OS);
 console.log('Version: ', Platform.Version);
 
 const AppLearnBasic = () => {
-    return <Networking />;
+    return <HandleTextInput />;
 };
 
 export default AppLearnBasic;

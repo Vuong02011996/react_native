@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
+// https://reactnative.dev/docs/flexbox
+
 // You will normally use a combination of flexDirection, alignItems, and justifyContent to achieve the right layout.
 
 // Flexbox works the same way React Native as it does on the web with a few exception.

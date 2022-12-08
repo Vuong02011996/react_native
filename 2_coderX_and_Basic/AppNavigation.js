@@ -29,7 +29,7 @@ function AppNavigation() {
                     name="Categories"
                     component={Categories}
                     options={{
-                        title: 'BIDA VUONG',
+                        title: 'TEST',
                         headerStyle: {
                             backgroundColor: '#f45',
                         },

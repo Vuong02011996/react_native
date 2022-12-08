@@ -2,13 +2,10 @@
 import * as React from 'react';
 // import { runOnJS } from 'react-native-reanimated';
 
-import { StyleSheet, View, Text } from 'react-native';
-import {
-  useCameraDevices,
-  useFrameProcessor,
-} from 'react-native-vision-camera';
+import {StyleSheet, View, Text} from 'react-native';
+import {useCameraDevices, useFrameProcessor} from 'react-native-vision-camera';
 
-import { Camera } from 'react-native-vision-camera';
+import {Camera} from 'react-native-vision-camera';
 // import { scanFaces, Face } from 'vision-camera-face-detector';
 
 export default function App() {
@@ -36,7 +33,7 @@ export default function App() {
   //   // const scannedFaces = scanFaces(frame);
   //   // runOnJS(setFaces)(scannedFaces);
   // }, []);
-  console.log("hasPermission: ", hasPermission)
+  console.log('hasPermission: ', hasPermission);
   // console.log("device: ", device)
   return device != null && hasPermission ? (
     <View style={{height: 600, width: 400}}>
@@ -47,19 +44,17 @@ export default function App() {
         // frameProcessor={frameProcessor}
         // frameProcessorFps={5}
       />
-     <Text style={{color: "red", alignItems: 'center'}}>Hello</Text>
-
+      <Text style={{color: 'red', alignItems: 'center'}}>Hello</Text>
     </View>
-  ) : <Null></Null>;
-  
+  ) : (
+    <Null></Null>
+  );
 }
 
-
-function Null()
-{
-  return <View>
-  <Text>
-    Hello Device undefined
-  </Text>
-</View>
+function Null() {
+  return (
+    <View>
+      <Text>Hello Device undefined</Text>
+    </View>
+  );
 }

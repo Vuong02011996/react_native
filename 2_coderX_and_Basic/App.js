@@ -16,7 +16,7 @@ import AppNavigation from './AppNavigation';
 
 function App() {
     return (
-        // <AppLearnNatigation></AppLearnNatigation>
+        // <AppLearnBasic></AppLearnBasic>
         <AppNavigation></AppNavigation>
     );
 }

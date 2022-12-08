@@ -74,6 +74,8 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
     - npm run android
     - npm run ios # you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
     - npm run web
+
+    - npx react-native start
     ```
 
     -   Cài máy ảo Iphone và Android
