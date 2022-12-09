@@ -11,12 +11,23 @@ import {
 import * as React from 'react';
 
 export default function CategoryItem({ route, navigation }) {
-    const onPressXoaMon = () => {
-        Alert.alert('Xoa');
+    const onPressXoaMon = (id) => {
+        // Alert.alert('Xoa');
+        // Xem index xoá là item nào trong menuItemList rồi xóa bằng splice(index, 1)
+        setMenuItemList((menuItemList) => {
+            console.log('index Xoa trong ham', id);
+            const newMenuItemList = [...menuItemList];
+            console.log('newMenuItemList truoc khi xoa', newMenuItemList);
+            newMenuItemList.splice(id, 1);
+            console.log('newMenuItemList sau khi xoa', newMenuItemList);
+
+            return newMenuItemList;
+        });
     };
 
     const RenderMon = ({ props }) => {
-        const showText = props.showText;
+        const { id, showText } = props;
+        console.log('props: ', props);
         const [text, setText] = React.useState('');
         const [price, setPrice] = React.useState('');
         const [quanity, setQuantity] = React.useState('');
@@ -77,8 +88,12 @@ export default function CategoryItem({ route, navigation }) {
                     />
                 </View>
 
+                {/* Button Xóa món */}
                 <Pressable
-                    onPress={onPressXoaMon}
+                    onPress={() => {
+                        console.log('index Xoa', id);
+                        onPressXoaMon(id);
+                    }}
                     style={({ pressed }) => [
                         styles.buttonXoa,
                         {
@@ -86,7 +101,7 @@ export default function CategoryItem({ route, navigation }) {
                         },
                     ]}
                 >
-                    <Text style={{ alignItems: 'center', fontSize: '16' }}>
+                    <Text style={{ textAlign: 'center', fontSize: '16' }}>
                         Xóa
                     </Text>
                 </Pressable>
@@ -95,7 +110,7 @@ export default function CategoryItem({ route, navigation }) {
     };
     console.log('re-render');
     const [menuItemList, setMenuItemList] = React.useState([
-        <RenderMon props={{ showText: 'flex' }} />,
+        <RenderMon props={{ showText: 'flex', id: 0 }} />,
     ]);
 
     // Update lại title khi click vào từng bàn
@@ -106,25 +121,43 @@ export default function CategoryItem({ route, navigation }) {
         }
     }, [route.params?.title]);
 
-    // Khi click vào thêm món sẽ add thêm một RenderMon vào mảng
-
+    // Button thêm món sẽ add thêm một RenderMon vào mảng
     React.useEffect(() => {
         // Use `setOptions` to update the button that we previously specified
         // Now the button includes an `onPress` handler to update the count
         navigation.setOptions({
             headerRight: () => (
-                <Button
+                <Pressable
                     onPress={() =>
                         setMenuItemList((menuItemList) => {
                             const newMenuItemList = [...menuItemList];
                             newMenuItemList.push(
-                                <RenderMon props={{ showText: 'none' }} />,
+                                <RenderMon
+                                    props={{
+                                        showText: 'none',
+                                        id: newMenuItemList.length,
+                                    }}
+                                />,
                             );
                             return newMenuItemList;
                         })
                     }
-                    title="Thêm"
-                />
+                    style={{
+                        backgroundColor: 'blue',
+                        padding: 8,
+                        borderRadius: '5%',
+                    }}
+                >
+                    <Text
+                        style={{
+                            textAlign: 'center',
+                            fontSize: 16,
+                            color: 'yellow',
+                        }}
+                    >
+                        Thêm
+                    </Text>
+                </Pressable>
             ),
         });
     }, [navigation]);
@@ -135,7 +168,6 @@ export default function CategoryItem({ route, navigation }) {
                 data={menuItemList}
                 keyExtractor={(item, index) => `${index}`}
                 renderItem={({ item }) => {
-                    console.log('item', item);
                     return item;
                 }}
             />
@@ -167,7 +199,8 @@ const styles = StyleSheet.create({
     },
     buttonXoa: {
         // height: 20,
-        // width: 20,
+        width: 70,
+        paddingVertical: 8,
         backgroundColor: 'blue',
         borderRadius: '10%',
     },
