@@ -17,10 +17,10 @@ import image1 from '../images/bida_image.jpg';
 
 export default function CategoryList(props) {
     const { category, onPress } = props;
-    console.log('props: ', props);
+    // console.log('props: ', props);
     let curTime = new Date().toLocaleString();
     // let curTime = new Date();
-    console.log(curTime);
+    // console.log(curTime);
 
     return (
         <TouchableOpacity activeOpacity={0.3} onPress={onPress}>
