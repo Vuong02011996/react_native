@@ -4,6 +4,11 @@ import CameraPage from './App_take_photo';
 
 const App = () => {
   return <CameraPage />;
+  // return (
+  //   <View>
+  //     <Text>App</Text>
+  //   </View>
+  // );
 };
 
 export default App;

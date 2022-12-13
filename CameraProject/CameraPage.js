@@ -1,16 +1,7 @@
-/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-// import { runOnJS } from 'react-native-reanimated';
-// import RNFS from 'react-native-fs';
 import RNFetchBlob from 'rn-fetch-blob';
 
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  SafeAreaView,
-} from 'react-native';
+import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
 import {Camera, useCameraDevices} from 'react-native-vision-camera';
 import axios from 'axios';
 
@@ -18,7 +9,6 @@ function callDetectFaceAxios(data, setNameStudent) {
   var data = JSON.stringify({
     image: data,
   });
-  // console.log('data: ', data);
 
   var config = {
     method: 'post',
@@ -36,7 +26,6 @@ function callDetectFaceAxios(data, setNameStudent) {
       console.log('data_res: ', data_res);
       if (data_res?.name) {
         console.log('name', data_res.name);
-        // setNameStudent(data_res.name);
         setNameStudent(data_res.name);
       }
     })
@@ -52,10 +41,8 @@ const CameraPage = () => {
   const [nameStudent, setNameStudent] = React.useState('Unknown name');
 
   const devices = useCameraDevices('wide-angle-camera');
-  // const devices = useCameraDevices();
   const device = devices.front;
   const camera = React.useRef(null);
-  // console.log('devices: ', device);
 
   // Set permission
   React.useEffect(() => {
@@ -67,22 +54,12 @@ const CameraPage = () => {
 
   const takePhotoAndDetecFace = async () => {
     var startTime = performance.now();
-    // Using Take photo from camera
-    // const photo = await camera.current.takePhoto({
-    //   flash: 'off',
-    //   qualityPrioritization: 'speed', // 2s -> 1.8s
-    //   // skipMetadata: true, // không thay đổi nhiều tốc độ
-    // });
-
-    // Using takeSnapshot
     const photo = await camera.current.takeSnapshot({
       quality: 100,
       skipMetadata: true,
     });
 
-    // console.log('photo: ', photo);
     console.log('photo.path: ', photo.path);
-    console.log('type photo.path: ', typeof photo.path);
     var endTime = performance.now();
     console.log(`Call to takePhoto took ${endTime - startTime} milliseconds`);
 
@@ -96,19 +73,8 @@ const CameraPage = () => {
     const data_base64 = await fs.readFile(filePath, 'base64');
     var endTime = performance.now();
     console.log(`Call to readFile took ${endTime - startTime} milliseconds`);
-    // console.log('data_base64: ', data_base64);
     callDetectFaceAxios(data_base64, setNameStudent);
-
-    // Using RNFS
-    // RNFS.readFile(photo.path, 'base64').then(data => {
-    //   // binary data
-    //   // console.log('data', typeof data);
-    //   callDetectFaceAxios(data, setNameStudent);
-    // });
   };
-
-  // Using press button
-  // const onPressButton = takePhotoAndDetecFace;
 
   // Using auto
   React.useEffect(() => {
@@ -127,23 +93,11 @@ const CameraPage = () => {
     );
   console.log(123);
 
-  // Cách lấy giá trị trước đó của một state, dùng useRef vì mỗi lần render lại component sẽ không set lại giá trị khởi tao
-  // const preNameStudent = React.useRef('');
-  // console.log('preNameStudent: ', preNameStudent);
-  // console.log('nameStudent: ', nameStudent);
-  // React.useEffect(() => {
-  //   if (preNameStudent == nameStudent) {
-  //     nameStudent = nameStudent + '_1';
-  //   }
-  //   preNameStudent.current = nameStudent;
-  // }, [nameStudent]);
-
   return (
     <SafeAreaView style={{flex: 1}}>
       {hasPermission && device ? (
         <Camera
           ref={camera}
-          // style={StyleSheet.absoluteFill}
           style={{flex: 1}}
           device={device}
           isActive={true}
@@ -152,14 +106,6 @@ const CameraPage = () => {
       ) : (
         <Text>You must accept camera permission</Text>
       )}
-      {/* <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.camButton}
-          onPress={onPressButton}
-          activeOpacity={0.4}>
-          <Text style={styles.text}>Click me</Text>
-        </TouchableOpacity>
-      </View> */}
       <Text
         style={{
           position: 'absolute',

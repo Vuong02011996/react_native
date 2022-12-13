@@ -34,4 +34,6 @@
 
 -   The Camera is not ready yet: check permision
     <uses-permission android:name="android.permission.CAMERA" />
--   'id' cam undefined: convert front->back; back -> front
+-   'id' cam undefined: convert front->back; back -> front, add `hasPermission && device ?` before Camera
+    https://github.com/mrousavy/react-native-vision-camera/issues/608
+-   TypeError: Network request failed/Axios Network Error: bật mạng cho điện thoại
