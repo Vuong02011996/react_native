@@ -49,33 +49,33 @@
 
 ## Usage Summary - Các bước cơ bản để thêm , câu hình và sử dụng redux trong dự án React.
 
-### 1. Install Redux Toolkit and React Redux
+### B1. Install Redux Toolkit and React Redux
 
 `npm install @reduxjs/toolkit react-redux`
 
-### 2. Create a Redux Store
+### B2. Create a Redux Store
 
 -   Create a file named `src/app/store.js`
 -   Import the `configureStore` API from Redux Toolkit.
 -   We'll start by creating an `empty Redux store`, and exporting it.
 
-### 3. Provide the Redux Store to React
+### B3. Provide the Redux Store to React
 
 -   Once the store is created, we can make it available to our React components by putting a React Redux <Provider> around our application in `src/index.js`
 -   Import the Redux store we just created, put a <Provider> around your <App>, and pass the store as a prop:
 
-### 4. Create a Redux State Slice
+### B4. Create a Redux State Slice
 
 -   Add a new file named `src/features/counter/counterSlice.js`
 -   In that file, import the `createSlice` API from Redux Toolkit.
 -   Tạo một slice là object với string name, giá trị khởi tạo của state, và một hoặc nhiều reducer function để thực hiện cách mà state update.
 -   Once a slice is created, we can export the generated Redux action creators and the reducer function for the whole slice.
 
-### 5. Add Slice Reducers to the Store
+### B5. Add Slice Reducers to the Store
 
 -   we need to import the reducer function from the counter slice and add it to our store
 
-### 6. Use Redux State and Actions in React Component
+### B6. Use Redux State and Actions in React Component
 
 -   Now we can use the `React Redux hooks` to let React components interact with the Redux store.
 -   We can read data from the store with `useSelector`, and dispatch actions using `useDispatch`

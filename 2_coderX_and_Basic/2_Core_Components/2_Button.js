@@ -45,7 +45,7 @@ import {
 
 const Separator = () => <View style={styles.separator} />;
 
-// Button không có màu background như trên web hiển thị
+// Button không có màu background như trên web hiển thị IOS
 const App = () => (
     <SafeAreaView style={styles.container}>
         <View>

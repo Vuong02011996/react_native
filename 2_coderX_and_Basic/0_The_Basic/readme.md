@@ -14,3 +14,9 @@
     -   JSX
     -   props
     -   state
+
+# TextInput với autocomplete
+
+-   Khó đặt biệt là input nằm trong FlatList, chỗ zIndex để phần gợi ý nổi lên trên các element khác.
+-   Sử dụng đơn giản: https://github.com/onmotion/react-native-autocomplete-dropdown
+-   Dùng phức tạp hơn: https://byteburgers.com/autocomplete - react-native-autocomplete-input

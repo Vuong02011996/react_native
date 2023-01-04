@@ -29,6 +29,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
  * @returns
  */
 
+/** Increasing Storage size
+ * https://react-native-async-storage.github.io/async-storage/docs/limits/
+ * https://react-native-async-storage.github.io/async-storage/docs/advanced/db_size
+ * @param {*} value
+ */
 // Storing string value
 const storeDataString = async (value) => {
     try {
